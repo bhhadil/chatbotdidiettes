@@ -5,12 +5,12 @@ app = Flask(__name__)
 
 # --- Fonction pour calculer le prix total ---
 def calculer_total(prix_euro, type_article):
-    taux_change = 4.5  # 1€ = 4.5 DT
+    taux_change = 3.5  # 1€ = 3.5 DT
     frais_transport = {
-        "sac": 0,
+        "sac": 1,
         "chaussure": 1,
-        "accessoire": 0,
-        "vetement_legere": 0,
+        "accessoire": 0.8,
+        "vetement_legere": 1,
         "vetement_lourd": 1,
     }
 
