@@ -9,7 +9,7 @@ def calculer_total(prix_euro, type_article):
     frais_transport = {
         "sac": 1,
         "chaussure": 1,
-        "accessoire": 0.8,
+        "accessoire": 0.9,
         "vetement_legere": 1,
         "vetement_lourd": 1,
     }
