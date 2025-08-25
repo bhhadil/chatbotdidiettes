@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Didiettes Bot</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>🌸 Didiettes Bot 🌸</h1>
+        <p>Calcule facilement le prix total de ton article avec frais de transport !</p>
+
+        <form method="POST" class="form-box">
+            <label>Prix de l'article (€):</label>
+            <input type="number" step="0.01" name="prix_euro" placeholder="Ex: 10" required>
+
+            <label>Type d'article:</label>
+            <select name="type_article" required>
+                <option value="sac">Sac</option>
+                <option value="chaussure">Chaussure</option>
+                <option value="accessoire">Accessoire</option>
+                <option value="vetement_legere">Vêtement léger</option>
+                <option value="vetement_lourd">Vêtement lourd</option>
+            </select>
+
+            <button type="submit">Calculer 🌟</button>
+        </form>
+
+        {% if total %}
+            <div class="result">
+                💰 Prix total: <strong>{{ total }} DT</strong>
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>
