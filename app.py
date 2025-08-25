@@ -1,3 +1,4 @@
+import os
 from flask import Flask, request, render_template
 
 app = Flask(__name__)
@@ -33,5 +34,5 @@ def index():
 
 # --- Lancement du serveur ---
 if __name__ == "__main__":
-    # host=0.0.0.0 pour qu'il soit accessible via ngrok ou Render
-    app.run(host="0.0.0.0", port=5000, debug=True)
+    port = int(os.environ.get("PORT", 5000))  # Render fournit le port via variable d'env
+    app.run(host="0.0.0.0", port=port, debug=True)
